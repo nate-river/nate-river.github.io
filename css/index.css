@@ -1,36 +1,198 @@
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block}
-body {line-height: 1}
-ol, ul {list-style: none}
-body{font-family:"ADELE";}
-section{
-    width:1120px;
-    padding:30px 0;
-    margin:20px auto;
-    /* border:1px solid black; */
+body {
+    font-size: 10px;
+    background: #E1E0E0;
+    color: rgba(0, 0, 0 ,.5);
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
-#bio{
+a {
+    color: rgba(0, 0, 0, .65);
+    text-decoration: none;
+    -webkit-transition: color 0.25s linear;
 }
-#photos-wrapper{
-    width:100%;
-    background:rgba(0,0,0,0.6);
-    box-shadow:0 0 20px black;
+a:hover {
+    color: rgba(0, 0, 0, .9);
 }
-#photos{
-    overflow:hidden;
+#watermark {
+    margin-bottom: 2em;
+    display: block;
 }
-.photo{
-    width:300px;
-    height:100px;
-    margin:5px;
-    background:#ffc312;
-    float:left;
+#watermark svg {
+    width: 48px;
+    height: 24px;
+    opacity: .2;
+    margin: 0;
 }
-.long-wrapper{
-    width:2000px;
+#page {
+    max-width: 25em;
+    margin: 2em;
+    font-size: 1.5em;
+    line-height: 1.4;
+    font-family:"Helvetica Neue", Helvetica, serif;
+    -webkit-transition: all 0.25s ease-in;
 }
-.clearfix::after{
-    content:" ";
-    display:block;
-    clear:both;
+#page h1 {
+    font-size: 2.2em;
+    line-height: 1;
+    margin: 0 0 0.75em 0;
+    font-weight: normal;
+    color: rgba(0, 0, 0, .65);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+#page p {
+    margin: 0.5em 0;
+    font-weight: 300;
+}
+#page .deck {
+    font-size: 1.2em;
+}
+#page .notabene {
+    margin-bottom: 1.5em;
+}
+#page .notabene p {
+    font-weight: 400;
+}
+#page .footnote {
+    font-size: 0.875em;
+    margin-top: 2em;
+    color: rgba(0, 0, 0, .35);
+}
+#page .footnote p {
+    font-weight: 400;
+}
+#page .footnote a {
+    color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+    -webkit-transition: color 0.25s linear;
+}
+#page .footnote a:hover {
+    color: rgba(0,0,0,0.75);
+}
+#headshot {
+    overflow: hidden;
+    text-align: right;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+#headshot img {
+    width: 100%;
+    height: auto;
+}
+
+#headshot .credit {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    margin: 0;
+    font-size: 0.75em;
+    color: rgba(255,255,255,0.6);
+    z-index: 1;
+    font-weight: 400;
+    font-family: 'franklin-gothic-urw', "Helvetica Neue", Helvetica,sans-serif;
+}
+#headshot .credit a {
+    color: rgba(255, 255, 255, .8);
+}
+#headshot .credit a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+@media screen and (min-width: 920px) {
+    #headshot {
+        position: absolute;
+        right: 0;
+        min-height: 500px;
+    }
+}
+@media screen and (min-width: 767px) {
+    #page {
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+    #headshot {
+        margin-right: 4em;
+        width: 18em;
+    }
+}
+@media screen and (min-height: 600px) {
+    #page {
+        margin-top: 4em;
+        margin-bottom: 4em
+    }
+}
+@media screen and (min-width: 1280px) {
+    #page {
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 30%;
+    }
+    #headshot {
+        margin-right: 20%;
+        width: 22%;
+    }
+}
+@media screen and (min-height: 980px) {
+    #page {
+        margin-top: 8em;
+        margin-bottom: 8em;
+    }
+}
+@media screen and (min-width: 1280px) and (min-height: 600px) {
+    #page {
+        padding-right: 50%;
+    }
+    #headshot {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 0;
+        bottom: 0;
+        left: auto;
+        text-align: center;
+        width: auto;
+        height: auto;
+        max-width: 50%;
+        min-height: 600px;
+    }
+    #headshot img {
+        height: 100%;
+        width: auto;
+        position: relative;
+        left: 100%;
+        margin-left: -200%;
+    }
+    #headshot .credit {
+        margin-right: 1.5em;
+    }
+}
+@media screen and (min-width: 468px) {
+    #page {
+        font-size: 1.75em;
+    }
+}
+@media screen and (min-width: 1685px) {
+    #page {
+        padding-left: 5em;
+    }
+    #watermark {
+        position: absolute;
+        margin-left: -5em;
+        margin-top: 0.5em;
+    }
+}
+@media screen and (min-width: 1685px) and (min-height: 767px) {
+    #page {
+        font-size: 1.875em;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    #watermark img {
+        width: 25px;
+        height: auto;
+    }
 }
