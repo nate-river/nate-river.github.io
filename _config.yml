@@ -10,7 +10,7 @@ title: nate-river
 email: mayanlong7@icloud.com
 description: >
     fullstack web developer
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://nate-river.github.io" # the base hostname & protocol for your site
 github_username: nate-river
 
