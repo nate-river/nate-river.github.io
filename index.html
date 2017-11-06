@@ -1,33 +1,20 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>Nate-River</title>
-    <meta name="description" content="Ma Yanlong is a programmer in TaiYuan China"/>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"/>
-    <link rel="stylesheet" href="./css/index.css"/>
-  </head>
-  <body>
-    <div id="page">
-      <div id="headshot">
-        <img src="./images/my.jpg"/>
-      </div>
-      <section id="main">
-        <h1> Ma Yanlong is a programmer in TaiYuan China </h1>
-        <p>Currently I’m work at <a href="//www.sxuek.com" target="_blank">ShanXi Unique Technology Co.Lt</a>, as a javascript teacher.</p>
-        <p>Here are some examples that I created to help students to understand the basic concept of program:</p>
-        <p><a target="_blank" href="/canvas-fir">five-in-row game</a></p>
-        <p><a target="_blank" href="/mine-sweeper">mine-sweeper game</a></p>
-        <p><a target="_blank" href="/greedysnake">greedysnake game</a></p>
-        <p>If you’d like to get in touch,feel free to <a target="_blank" href="mailto:mayanlong7@icloud.com">send me an-email</a>, or
-          send a request to my Wechat account:  luffy_river
-        </p>
-        <div class="footnote">
-<!--           <p>Note:This site's design style is a copy of <a target="_blank" href="http://wilsonminer.com">wilsonminer's personal homepage</a>.</p> -->
-          <p><a target="_blank" href="/blog">Link to My Blog</a>.</p>
-          <p><a target="_blank" href="//github.com/nate-river">Link to my github page</a>.</p>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <!--<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>-->
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
