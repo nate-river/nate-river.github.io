@@ -1698,7 +1698,9 @@ null
     }
   }
 }
-```# 16. /checkout/cart/selectall
+```
+
+# 16. /checkout/cart/selectall
 `全选和反选购物车中的产品`
 #### 请求方法
 `GET`
