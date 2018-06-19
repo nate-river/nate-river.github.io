@@ -1698,4 +1698,158 @@ null
     }
   }
 }
+```# 16. /checkout/cart/selectall
+`全选和反选购物车中的产品`
+#### 请求方法
+`GET`
+#### 请求参数
+```json
+{
+  "checked":0
+}
 ```
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": []
+}
+```
+# 17. /customer/productfavorite/index
+`收藏列表`
+#### 请求方法
+`GET`
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": {
+    "productList": [
+      {
+        "_id": {
+          "$oid": "57cfc212f656f28b5adf9deb"
+        },
+        "name": "迷你长袖开衩",
+        "url_key": "/alluring-long-sleeve-open-back-draped-maxi-dress-55525232",
+        "price": 44.56,
+        "special_price": 40.56,
+        "special_from": 0,
+        "special_to": 0,
+        "image": {
+          "gallery": [
+            {
+              "image": "/2/01/20160715121751_31875.jpg",
+              "label": "",
+              "sort_order": "",
+              "is_thumbnails": "1",
+              "is_detail": "1"
+            },
+            {
+              "image": "/2/01/20160715121751_38104.jpg",
+              "label": "",
+              "sort_order": "",
+              "is_thumbnails": "1",
+              "is_detail": "1"
+            }
+          ],
+          "main": {
+            "image": "/2/01/20160715121751_13739.jpg",
+            "label": "",
+            "sort_order": "",
+            "is_thumbnails": "1",
+            "is_detail": "1"
+          }
+        },
+        "updated_at": "2018-06-19 10:48:13",
+        "favorite_id": "5b286eedbfb7ae30fc096b52",
+        "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160715121751_13739.jpg",
+        "price_info": {
+          "price": {
+            "symbol": "€",
+            "value": 41.45,
+            "code": "EUR"
+          },
+          "special_price": {
+            "symbol": "€",
+            "value": 37.73,
+            "code": "EUR"
+          }
+        },
+        "product_id": "57cfc212f656f28b5adf9deb"
+      },
+      {
+        "_id": {
+          "$oid": "5819941ef656f28a2a2f0b77"
+        },
+        "name": "测试计算机",
+        "url_key": "/test-computer",
+        "price": 33,
+        "special_price": 0,
+        "special_from": 0,
+        "special_to": 0,
+        "image": {
+          "main": {
+            "image": "/1/11/111.jpg",
+            "label": "",
+            "sort_order": "",
+            "is_thumbnails": "1",
+            "is_detail": "1"
+          }
+        },
+        "updated_at": "2018-05-17 09:23:26",
+        "favorite_id": "5afcd98ebfb7ae3eb66e664c",
+        "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/1/11/111.jpg",
+        "price_info": {
+          "price": {
+            "symbol": "€",
+            "value": 30.69,
+            "code": "EUR"
+          }
+        },
+        "product_id": "5819941ef656f28a2a2f0b77"
+      }
+    ],
+    "count": 2,
+    "numPerPage": null
+  }
+}
+```
+# 18. /customer/productfavorite/remove
+`删除收藏中的产品`
+#### 请求方法
+`POST`
+#### 请求参数
+```json
+{
+    "favorite_id":"543"
+}
+```
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据
+```json
+{
+    "code": 200,
+    "message": "process success",
+    "data": []
+}
+```
+
