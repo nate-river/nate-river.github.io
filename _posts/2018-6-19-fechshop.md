@@ -1389,3 +1389,313 @@ null
   }
 }
 ```
+# 7. /customer/login/account
+`登陆接口`
+#### 请求方法
+`POST`
+#### 请求参数
+```json
+{
+"email": "" ,//账号
+"password":"" // 密码
+}
+```
+#### 返回数据格式
+###### 登陆失败
+```json
+{
+  "code": 1100002,
+  "message": "account login email or password is not correct",
+  "data": []
+}
+```
+###### 登陆成功
+`返回数据`
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": []
+}
+```
+`返回的头信息`
+```json
+{
+  "Access-Token":"",
+  "Fecshop-Uuid":""
+}
+```
+# 8. /customer/register/account
+`注册接口`
+#### 请求方法
+`POST`
+#### 请求参数
+```json
+{
+"email": "2@qq.com",
+"password": "123456",
+"firstname": "abc",
+"lastname": "123",
+"is_subscribed": "false",
+"captcha": "9598"
+}
+```
+#### 返回数据格式
+###### 注册失败
+```json
+{
+  "code": 1100007,
+  "message": "account register fail",
+  "data": {
+    "error": "该邮箱地址已经被注册"
+  }
+}
+```
+###### 注册成功
+`返回数据`
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": {
+    "content": "register success"
+  }
+}
+```
+`返回的头信息`
+```json
+{
+  "Access-Token":"",
+  "Fecshop-Uuid":""
+}
+```
+# 9. /customer/account/logout
+`退出登录接口`
+#### 请求方法
+`GET`
+#### 请求参数
+```json
+null
+```
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据格式
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": []
+}
+```
+# 10. /customer/forgot/password
+`忘记密码页面`
+#### 请求方法
+`GET`
+#### 返回数据
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": {
+    "forgotCaptchaActive": true
+  }
+}
+```
+# 11. /customer/site/captcha
+`获取验证码`
+#### 请求方法
+`GET`
+#### 返回数据
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": {
+    "image": "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"
+  }
+}
+```
+# 12. /customer/forgot/sendcode
+`向用户邮箱发送一封忘记密码的邮件`
+#### 请求方法
+`POST`
+#### 请求参数
+```json
+{
+"domain": "http://demo.fancyecommerce.com",
+"email": "380037343@qq.com",
+"captcha": "5322"
+}
+```
+#### 返回数据
+```json
+{
+"code":200,
+"message":"process success",
+"data":[]
+}
+```
+# 13. /checkout/cart/add
+`将商品加入购物车`
+#### 请求方法
+`POST`
+#### 请求参数
+```json
+{
+"custom_option": "",
+"product_id":"",
+"qty": "1"
+}
+```
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": {
+    "items_count": 4
+  }
+}
+```
+# 14. /checkout/cart/updateinfo
+`修改购物车中单个商品的数量 和 删除购物车中的单个条目`
+#### 请求方法
+`POST`
+#### 请求参数
+```json
+{
+"up_type": "add_one|remove|less_one",
+"item_id": "2958"
+}
+```
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据
+```json
+{
+"code":200,
+"message":"process success",
+"data":[]
+}
+```
+# 15. /checkout/cart/index
+`某用户购物车中的所有条目`
+#### 请求方法
+`GET`
+#### 请求头信息
+```json
+{
+  "access-token":""
+}
+```
+#### 返回数据
+```json
+{
+  "code": 200,
+  "message": "process success",
+  "data": {
+    "cart_info": {
+      "cart_id": "2320",
+      "store": "fecshop.appfront.fancyecommerce.com/cn",
+      "items_count": "3",
+      "coupon_code": null,
+      "shipping_method": "",
+      "payment_method": null,
+      "grand_total": "61.38",
+      "shipping_cost": "0.00",
+      "coupon_cost": "0.00",
+      "product_total": "61.38",
+      "base_grand_total": "66.00",
+      "base_shipping_cost": "0.00",
+      "base_coupon_cost": "0.00",
+      "base_product_total": "66.00",
+      "products": [
+        {
+          "item_id": "2968",
+          "active": 0,
+          "product_id": "57c3aaa9f656f24f353bf56e",
+          "sku": "sk2001-blue-zo",
+          "name": "对时尚按钮点缀空心网状针织靴子妇女的袖口",
+          "qty": "1",
+          "custom_option_sku": "",
+          "product_price": 133.52,
+          "product_row_price": 133.52,
+          "base_product_price": 143.56,
+          "base_product_row_price": 143.56,
+          "product_weight": 0,
+          "product_row_weight": 0,
+          "product_volume_weight": null,
+          "product_row_volume_weight": 0,
+          "product_volume": "0.00",
+          "product_row_volume": 0,
+          "product_url": "/pair-of-stylish-button-embellished-hollow-out-mesh-shape-knitted-boot-cuffs-for-women",
+          "custom_option": [],
+          "spu_options": {
+            "color": "white",
+            "size": "M"
+          },
+          "img_url": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160722142719_52348.jpg",
+          "url": "/catalog/product/57c3aaa9f656f24f353bf56e",
+          "custom_option_info": {
+            "color": "white",
+            "size": "M"
+          }
+        },
+        {
+          "item_id": "3464",
+          "active": 1,
+          "product_id": "57c7da1ef656f20c713bf56e",
+          "sku": "sk0008",
+          "name": "时髦的镶边criss十字形的妇女的礼服",
+          "qty": "2",
+          "custom_option_sku": "",
+          "product_price": 30.69,
+          "product_row_price": 61.38,
+          "base_product_price": 33,
+          "base_product_row_price": 66,
+          "product_weight": 0,
+          "product_row_weight": 0,
+          "product_volume_weight": null,
+          "product_row_volume_weight": 0,
+          "product_volume": "0.00",
+          "product_row_volume": 0,
+          "product_url": "/stylish-striped-criss-cross-womens-dress",
+          "custom_option": [],
+          "spu_options": {
+            "color": "white & black",
+            "size": "M"
+          },
+          "img_url": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160810112221_81491.jpg",
+          "url": "/catalog/product/57c7da1ef656f20c713bf56e",
+          "custom_option_info": {
+            "color": "white & black",
+            "size": "M"
+          }
+        }
+      ],
+      "product_weight": "0.00",
+      "product_volume_weight": "0.00",
+      "product_volume": "0.00"
+    },
+    "currency": {
+      "code": "EUR",
+      "rate": 0.93,
+      "symbol": "€"
+    }
+  }
+}
+```
