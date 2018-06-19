@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "fecshop API"
+tags:
+categories:
+---
+
 # 1. /cms/home/index
 `获取首页信息`
 #### 请求方法
