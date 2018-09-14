@@ -6,6 +6,15 @@ categories:
 ---
 
 ```shell
+
+docker-compose exec php bash
+dpkg-reconfigure dash
+cd /www/web/fecshop/vendor/fancyecommerce/fecshop/shell/search
+sh fullSearchSync.sh
+
+
+
+
 mongoexport -d fecshop -c product_flat -o /data/example_db/product_flat.js
 mongoexport -d fecshop -c vendors_info -o /data/example_db/vendors_info.js
 mv yii2_fecshop_docker/db/mongodb/example_db/category.js share/public/
