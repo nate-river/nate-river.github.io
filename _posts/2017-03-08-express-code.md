@@ -5,6 +5,13 @@ tags:
 categories:
 ---
 
+```shell
+mongoexport -d fecshop -c product_flat -o /data/example_db/product_flat.js
+mongoexport -d fecshop -c vendors_info -o /data/example_db/vendors_info.js
+mv yii2_fecshop_docker/db/mongodb/example_db/category.js share/public/
+source /var/example_db/mysql_fecshop.sql
+```
+
 ## 处理普通post请求
 
 
