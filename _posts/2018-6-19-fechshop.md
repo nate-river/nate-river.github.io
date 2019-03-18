@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "fecshop API"
-tags:
-categories:
+tags: "ui"
+categories: "ask"
 ---
 
 # 1. /cms/home/index
